@@ -2,8 +2,7 @@
 
 const char *RECORDS = "./data/records.txt";
 
-int getAccountFromFile(FILE *ptr, char name[50], struct Record *r)
-{
+int getAccountFromFile(FILE *ptr, char name[50], struct Record *r) {
     return fscanf(ptr, "%d %d %s %d %d/%d/%d %s %d %lf %s",
                   &r->id,
 		  &r->userId,
@@ -18,8 +17,7 @@ int getAccountFromFile(FILE *ptr, char name[50], struct Record *r)
                   r->accountType) != EOF;
 }
 
-void saveAccountToFile(FILE *ptr, struct User u, struct Record r)
-{
+void saveAccountToFile(FILE *ptr, struct User u, struct Record r) {
     fprintf(ptr, "%d %d %s %d %d/%d/%d %s %d %.2lf %s\n\n",
             &r->id,
 	    &u->id
@@ -34,8 +32,7 @@ void saveAccountToFile(FILE *ptr, struct User u, struct Record r)
             r.accountType);
 }
 
-void stayOrReturn(int notGood, void f(struct User u), struct User u)
-{
+void stayOrReturn(int notGood, void f(struct User u), struct User u) {
     int option;
     if (notGood == 0)
     {
@@ -73,8 +70,7 @@ void stayOrReturn(int notGood, void f(struct User u), struct User u)
     }
 }
 
-void success(struct User u)
-{
+void success(struct User u) {
     int option;
     printf("\n✔ Success!\n\n");
 invalid:
@@ -96,8 +92,7 @@ invalid:
     }
 }
 
-void createNewAcc(struct User u)
-{
+void createNewAcc(struct User u) {
     struct Record r;
     struct Record cr;
     char userName[50];
@@ -135,8 +130,7 @@ noAccount:
     success(u);
 }
 
-void checkAllAccounts(struct User u)
-{
+void checkAllAccounts(struct User u) {
     char userName[100];
     struct Record r;
 
