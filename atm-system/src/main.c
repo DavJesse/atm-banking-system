@@ -1,7 +1,6 @@
 #include "header.h"
 
-void mainMenu(struct User u)
-{
+void mainMenu(struct User u) {
     int option;
     system("clear");
     printf("\n\n\t\t======= ATM =======\n\n");
@@ -52,8 +51,7 @@ void mainMenu(struct User u)
     }
 };
 
-void initMenu(struct User *u)
-{
+void initMenu(struct User *u) {
     int r = 0;
     int option;
     system("clear");
@@ -94,8 +92,7 @@ void initMenu(struct User *u)
     }
 };
 
-int main()
-{
+int main() {
     struct User u;
     
     initMenu(&u);
